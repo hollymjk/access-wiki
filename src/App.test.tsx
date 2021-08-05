@@ -1,9 +1,11 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders input search area', () => {
+    render(<App/>);
+    const label = screen.getByText(/Cerca parola/i);
+    const input = screen.getByTestId("search")
+    expect(label).toBeInTheDocument();
+    expect(input).toBeInTheDocument();
 });
